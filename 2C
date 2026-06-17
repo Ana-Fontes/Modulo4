@@ -1,0 +1,61 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class WireframeC extends JFrame {
+
+    public WireframeC() {
+
+        setTitle("Wireframe C");
+        setSize(800, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setLayout(new BorderLayout());
+
+        // Título
+        add(new JLabel("Título", SwingConstants.CENTER),
+                BorderLayout.NORTH);
+
+        // Centro
+        JPanel centro = new JPanel(new GridLayout(1, 2, 10, 10));
+
+        // Texto
+        JPanel texto = new JPanel(new BorderLayout());
+
+        texto.add(new JLabel("Título do texto"),
+                BorderLayout.NORTH);
+
+        JTextArea areaTexto = new JTextArea(
+                "Lorem ipsum dolor sit amet...");
+        texto.add(areaTexto, BorderLayout.CENTER);
+
+        // Imagem
+        JPanel imagem = new JPanel(new BorderLayout());
+
+        imagem.add(new JLabel("Colocar uma imagem aqui",
+                        SwingConstants.CENTER),
+                BorderLayout.CENTER);
+
+        imagem.add(new JButton("Carregar imagem"),
+                BorderLayout.SOUTH);
+
+        centro.add(texto);
+        centro.add(imagem);
+
+        add(centro, BorderLayout.CENTER);
+
+        // Botões
+        JPanel botoes = new JPanel();
+
+        botoes.add(new JButton("Salvar"));
+        botoes.add(new JButton("Cancelar"));
+        botoes.add(new JButton("Voltar"));
+
+        add(botoes, BorderLayout.SOUTH);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new WireframeC();
+    }
+}
