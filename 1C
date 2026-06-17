@@ -1,0 +1,25 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Exercicio1B extends JFrame {
+
+    public Exercicio1B() {
+        setTitle("Teste");
+        setSize(500, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setLayout(new BorderLayout());
+
+        add(new JButton("Botão 1"), BorderLayout.NORTH);
+        add(new JButton("Botão 2"), BorderLayout.CENTER);
+        add(new JButton("Botão 3"), BorderLayout.WEST);
+        add(new JButton("Botão 4"), BorderLayout.SOUTH);
+        add(new JButton("Botão 5"), BorderLayout.EAST);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new Exercicio1B();
+    }
+}
