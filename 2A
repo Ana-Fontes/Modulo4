@@ -1,0 +1,53 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class WireframeA extends JFrame {
+
+    public WireframeA() {
+
+        setTitle("Wireframe A");
+        setSize(900, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setLayout(new BorderLayout());
+
+        JPanel formulario = new JPanel(new GridLayout(5,2,5,5));
+
+        formulario.add(new JLabel("Campo 1"));
+        formulario.add(new JTextField());
+
+        formulario.add(new JLabel("Campo 2"));
+        formulario.add(new JTextField());
+
+        formulario.add(new JLabel("Campo 3"));
+        formulario.add(new JTextField());
+
+        formulario.add(new JLabel("Campo 4"));
+        formulario.add(new JTextField());
+
+        formulario.add(new JButton("Salvar"));
+
+        add(formulario, BorderLayout.WEST);
+
+        JPanel conteudo = new JPanel(new BorderLayout());
+
+        conteudo.add(new JLabel("Título", SwingConstants.CENTER),
+                BorderLayout.NORTH);
+
+        JTextArea texto = new JTextArea();
+        conteudo.add(texto, BorderLayout.CENTER);
+
+        JLabel rodape = new JLabel("Rodapé",
+                SwingConstants.CENTER);
+
+        conteudo.add(rodape, BorderLayout.SOUTH);
+
+        add(conteudo, BorderLayout.CENTER);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new WireframeA();
+    }
+}
