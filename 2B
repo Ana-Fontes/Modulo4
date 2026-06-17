@@ -1,0 +1,64 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class WireframeB extends JFrame {
+
+    public WireframeB() {
+
+        setTitle("Wireframe B");
+        setSize(1000,600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setLayout(new BorderLayout());
+
+        add(new JLabel("Título",
+                SwingConstants.CENTER), BorderLayout.NORTH);
+
+        JPanel menu = new JPanel(new GridLayout(4,1));
+
+        menu.add(new JButton("Cliente"));
+        menu.add(new JButton("Produto"));
+        menu.add(new JButton("Vendas"));
+        menu.add(new JButton("Arquivos"));
+
+        add(menu, BorderLayout.WEST);
+
+        JPanel propaganda = new JPanel();
+        propaganda.add(new JLabel("Área para propaganda"));
+
+        add(propaganda, BorderLayout.EAST);
+
+        JPanel posts = new JPanel(new GridLayout(2,2,10,10));
+
+        for(int i=1;i<=4;i++){
+
+            JPanel post = new JPanel(new BorderLayout());
+
+            post.add(new JLabel("Título",
+                    SwingConstants.CENTER),
+                    BorderLayout.NORTH);
+
+            post.add(new JLabel("Postagem",
+                    SwingConstants.CENTER),
+                    BorderLayout.CENTER);
+
+            post.add(new JLabel("Autor",
+                    SwingConstants.CENTER),
+                    BorderLayout.SOUTH);
+
+            posts.add(post);
+        }
+
+        add(posts, BorderLayout.CENTER);
+
+        add(new JLabel("Rodapé",
+                SwingConstants.CENTER),
+                BorderLayout.SOUTH);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new WireframeB();
+    }
+}
