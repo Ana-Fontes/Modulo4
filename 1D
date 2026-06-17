@@ -1,27 +1,29 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Exercicio1C extends JFrame {
+public class Exercicio1D extends JFrame {
 
-    public Exercicio1C() {
+    public Exercicio1D() {
 
         setTitle("Teste");
-        setSize(500, 350);
+        setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        setLayout(new GridLayout(3, 2));
+        JPanel painel = new JPanel();
+        painel.setLayout(new BoxLayout(painel, BoxLayout.Y_AXIS));
 
-        add(new JButton("Botão 1"));
-        add(new JButton("Botão 2"));
-        add(new JButton("Botão 3"));
-        add(new JButton("Botão 4"));
-        add(new JButton("Botão 5"));
-        add(new JPanel());
+        painel.add(new JButton("Botão 1"));
+        painel.add(new JButton("Botão 2"));
+        painel.add(new JButton("Botão 3"));
+        painel.add(new JButton("Botão 4"));
+        painel.add(new JButton("Botão 5"));
+
+        add(painel, BorderLayout.CENTER);
 
         setVisible(true);
     }
 
     public static void main(String[] args) {
-        new Exercicio1C();
+        new Exercicio1D();
     }
 }
